@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+# Quotes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my Quote Generator Web App!
 
-## Available Scripts
+1. Thoughts and Processes:
+  Given the requirements, it made sense to me that we could split the tasks up to 5 components:
+    - QuoteDisplay: displays the currently selected quote. selects the quote to be displayed, and makes a Quote Card for it. also displays a character count of the quote
+    - FavoriteQuotes: displays our list of current favorite quotes in a list of quote cards. you can delete a quote from your favorites by clicking the trash can icon from material ui. 
+    - QuoteCard: the bulk of the program. gives functionality to copy to clipboard, favorite the quote if not a favorite already, and remove from favorites if the quote is in favorites. in the prior 2 components we pass in if this quote card is in the favorites list or just a standard quote card. Also adds a character count
+    - App.jsx: This ties all the 3 custom components into the actual main component. we use localStorage to store our favorites list, and fetch our favorites at the start by that.
+    - App.css: This manages the css styling to all of the 4 components above. this is where I spent the bulk of designing the UI for the program. this helped use a consistent design for all of the components too instead of making separate css classes for each component
 
-In the project directory, you can run:
+2. Features and Functionalities:
+   Functionalities as mentioned above are to copy the clipboard, delete an item from your favorites, and favorite a quote. I used icons accordingly from material ui, and built in functionality into those icons. Copy to clipboard uses the navigator.clipboard to copy the text. Favoriting is handled in App, and adds the quote to favorites if the quote is not already there. Removing a favorite is also in App, and just simply removes the the quote from favorites. Another functionality is character length. in the quote card, if the text is empty, it doesn't display the length, but if there is text, I just displayed text.length. localStorage will grab the favorites stored in local storage from App.
 
-### `npm start`
+   The static array of quotes is stored in the App component. It includes the first 25 quotes I found on https://www.timechamp.io/blogs/the-100-best-and-most-famous-quotes-of-all-time/ and structures by text and author so it's easier to pass into a quote card, and display that.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. Setup Instructions:
+   Once you clone the repository, it should be ready to go with the npm start command!
